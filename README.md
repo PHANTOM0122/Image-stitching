@@ -51,14 +51,14 @@ After finding Homography matrix, need perspective projection of image plane. Bac
 
 ### 2) Campus(1) 
 **```Before Stitching```** <br><br>
-<img src="https://user-images.githubusercontent.com/50229148/209268707-26f9186c-5e89-4be8-a813-d07e42800885.png" width="300" height="200"><img src="https://user-images.githubusercontent.com/50229148/209268722-a783d2b5-c8e6-4f4e-8d9d-c11e492a6fe3.png" width="300" height="200"><img src="https://user-images.githubusercontent.com/50229148/209268754-b94adbc3-d49b-4458-9a73-9fa8cfc62688.png" width="300" height="200">
+<img src="https://user-images.githubusercontent.com/50229148/209268707-26f9186c-5e89-4be8-a813-d07e42800885.png" width="240" height="180"><img src="https://user-images.githubusercontent.com/50229148/209268722-a783d2b5-c8e6-4f4e-8d9d-c11e492a6fe3.png" width="240" height="180"><img src="https://user-images.githubusercontent.com/50229148/209268754-b94adbc3-d49b-4458-9a73-9fa8cfc62688.png" width="240" height="180">
 
 **```After Stitching```** <br><br>
 ![result_campus2](https://user-images.githubusercontent.com/50229148/209268606-806e3559-aca5-4f2b-8c32-e210bee17ed2.jpg)
 
 ### 3) Campus(2)
 **```Before Stitching```** <br><br>
-<img src="https://user-images.githubusercontent.com/50229148/209268879-a980fac0-090f-4cbd-960e-b764b73f528c.png" width="300" height="200"><img src="https://user-images.githubusercontent.com/50229148/209268897-262829e4-5ed1-497c-8899-a2bdb4a70613.png" width="300" height="200"><img src="https://user-images.githubusercontent.com/50229148/209268918-c8187876-ea39-4221-a026-3eb72585dde8.png" width="300" height="200">
+<img src="https://user-images.githubusercontent.com/50229148/209268879-a980fac0-090f-4cbd-960e-b764b73f528c.png" width="240" height="180"><img src="https://user-images.githubusercontent.com/50229148/209268897-262829e4-5ed1-497c-8899-a2bdb4a70613.png" width="240" height="180"><img src="https://user-images.githubusercontent.com/50229148/209268918-c8187876-ea39-4221-a026-3eb72585dde8.png" width="240" height="180">
 
 **```After Stitching```** <br><br>
 ![result_campus](https://user-images.githubusercontent.com/50229148/209268609-66156904-3699-4e20-97e7-8cfaef961631.jpg)
