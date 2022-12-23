@@ -23,11 +23,24 @@ If the ratio is smaller than distance ratio, it is estimated as good match. Iter
 
 ### 2) Compute Homography matrix 
 We can compute homograhpy matrix based on good matches. The pictures below show how to calculate matrix. <br>
-It is over-determined problem, which only needs 4 correspondencess. However, there are more than 4 correspondences in good_matches, we can use RANSAC in the presence of outliers. ```match_ransac``` performs RANSAC, iterating over 1000 times and 
-Convert coordinates of keypoint into homogenous coordinate, then 
+It is over-determined problem, which only needs 4 correspondencess. However, there are more than 4 correspondences in good_matches, we can use RANSAC in the presence of outliers. ```match_ransac``` performs RANSAC, which selects random 4 points, calculate H, and get Euclidean distance between warped source points and reference points. While iterating over 1000 times, save the best results and returns Homography matrix. 
 
-
-
+### 3) Backward-mapping & warping with Homography matrix
+After finding Homography matrix, need perspective projection of image plane. Backward warping use inverse mapping between reference image coordinate(x',y') and source coordinage(x,y). This makes every pixel of reference image mapping into source coordinate, preventing holes. Backward mapping is implemented in ```warp``` function, shown below.
+```python
+# Backward warping은 output의 좌표에 대응되는 값을 source에서 찾는다
+    # 이로 인해, output에서는 black hole들이 생기지 않는다는 장점이 있다
+    for x in range(size_x): # ouput의 x좌표
+        for y in range(size_y): # ouput의 y좌표
+            # Inverse Homography matrix를 이용하여 
+            point_xy = homogeneous_coordinate(np.dot(homography_inverse, [[x+ offset_x], [y+offset_y], [1]]))
+            point_x = int(point_xy[0]) # source의 x좌표
+            point_y = int(point_xy[1]) # source의 y좌표
+            if (point_x >= 0 and point_x < column_number and point_y >= 0 and point_y < row_number): # output 영역 안에서만 정의
+                result[y, x, :] = image_array[point_y, point_x, :]
+```
+### 4) Blend three images into a panorama image
+```blend3images``` performs mosaicing images with homography matrices found above. 
 ## Results
 ### 1) Paris
 **```Before Stitching```** <br><br>
