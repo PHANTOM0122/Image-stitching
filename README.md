@@ -44,7 +44,7 @@ After finding Homography matrix, need perspective projection of image plane. Bac
 ## Results
 ### 1) Paris
 **```Before Stitching```** <br><br>
-<img src="https://user-images.githubusercontent.com/50229148/209268114-94392358-aff3-49fe-9ab3-93dbc601a328.jpg" width="300" height="200"><img src="https://user-images.githubusercontent.com/50229148/209268230-37b06945-dba9-4676-9432-cff3f68d0978.jpg" width="300" height="200"><img src="https://user-images.githubusercontent.com/50229148/209268316-78170989-36e3-4a01-8a77-9109860d5955.jpg" width="300" height="200">
+<img src="https://user-images.githubusercontent.com/50229148/209268114-94392358-aff3-49fe-9ab3-93dbc601a328.jpg" width="200" height="150"><img src="https://user-images.githubusercontent.com/50229148/209268230-37b06945-dba9-4676-9432-cff3f68d0978.jpg" width="200" height="150"><img src="https://user-images.githubusercontent.com/50229148/209268316-78170989-36e3-4a01-8a77-9109860d5955.jpg" width="200" height="150">
 
 **```After Stitching```** <br><br>
 <img src="https://user-images.githubusercontent.com/50229148/209268013-698ef979-98a4-459f-a981-b5553a107256.jpg"><br>
