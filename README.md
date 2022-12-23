@@ -6,6 +6,18 @@ Homography matrixs were calculated between left-middle, middle-right images.
 Feature points found by SIFT were used to calculate matrix. The process of calculating matrix was implemented from scatch. 
 In order to find robust matrix, RANSAC was used. After finding Homography matrix, backward mapping was used to prevent holes, frequently found in forward mapping.
 
+## Implementation detail
+
+### 1) Feature & correspondence Detection
+Using SIFT for keypoint detection & descriptors. This was implemented in ```SIFT_detect``` function.<br>
+After detecting keypoints, need to find correspondences between keypoints in source and reference image.<br>
+The following is the details of function ```compute_raw_matches```, which computes coarse correspondences between keypoints.<br>
+1) Find correspondences with descriptors, Euclidean distance was used for matching descriptors.<br>
+2) Set keypoint's descriptor in source image, then calcuate Euclidean distance with all keypoint's descriptors in reference image.<br>
+3) Sorting them in ascending order. The lower of the distance between descriptors, the similar with descriptors. 
+4) Save best & second matching results in raw_matches.
+
+
 ## Results
 ### 1) Paris
 **```Before Stitching```** <br><br>
