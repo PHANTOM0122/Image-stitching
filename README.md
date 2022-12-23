@@ -8,7 +8,7 @@ In order to find robust matrix, RANSAC was used. After finding Homography matrix
 
 ## Implementation detail
 
-### 1) Feature & correspondence Detection
+### 1) Features detection & find correspondences 
 Using SIFT for keypoint detection & descriptors. This was implemented in ```SIFT_detect``` function.<br>
 After detecting keypoints, need to find correspondences between keypoints in source and reference image.<br>
 The following is the details of function ```compute_raw_matches```, which computes coarse correspondences between keypoints.<br>
@@ -16,6 +16,16 @@ The following is the details of function ```compute_raw_matches```, which comput
 2) Set keypoint's descriptor in source image, then calcuate Euclidean distance with all keypoint's descriptors in reference image.<br>
 3) Sorting them in ascending order. The lower of the distance between descriptors, the similar with descriptors. 
 4) Save best & second matching results in raw_matches.
+
+Raw_matches were then filtered, to find good correspondences. This was implemented in ```filter matches```. <br>
+First, set the disance ratio (usually between 0.6~0.9). Then, find the ratio between first & second nearest match and compare with distance ratio.
+If the ratio is smaller than distance ratio, it is estimated as good match. Iterate this process over the raw_matches, and save the good matche into good_matches.
+
+### 2) Compute Homography matrix 
+We can compute homograhpy matrix based on good matches. The pictures below show how to calculate matrix. <br>
+It is over-determined problem, which only needs 4 correspondencess. However, there are more than 4 correspondences in good_matches, we can use RANSAC in the presence of outliers. ```match_ransac``` performs RANSAC, iterating over 1000 times and 
+Convert coordinates of keypoint into homogenous coordinate, then 
+
 
 
 ## Results
